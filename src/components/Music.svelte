@@ -2,7 +2,7 @@
 <script>
   export let name;
   export let v;
-  const icon = `../../public/images/empty.png`;
+  const icon = `./images/empty.png`;
   const gradient = `#${v.color}, #${v.color}, #${v.color}`;
   const style = `mask-image: url(${icon}); background-image: linear-gradient(to bottom right, ${gradient});`;
 </script>

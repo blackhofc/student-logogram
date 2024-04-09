@@ -89,7 +89,7 @@
 
     parsedStudents.push({
       ...person,
-      symbol: `../../public/images/logograms/${id}.png`,
+      symbol: `./images/logograms/${id}.png`,
       gradient: colors.join(", "),
     });
   });

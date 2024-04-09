@@ -2,7 +2,7 @@
 <script>
   export let symbol;
   export let name;
-  const icon = `../../public/images/translator/${symbol.id}.png`;
+  const icon = `./images/translator/${symbol.id}.png`;
 </script>
 
 <div class="flex-box">
