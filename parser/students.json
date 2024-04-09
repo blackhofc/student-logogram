@@ -1,0 +1,469 @@
+[
+    {
+        "id": 1,
+        "name": "Mariana Zunino",
+        "age": 20,
+        "gender": "Mujer",
+        "music_genres": [
+            "R&B",
+            "Pop"
+        ],
+        "fav_sports": [
+            "Fútbol",
+            "Tenis",
+            "Fórmula 1"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Tadeo Yapoudjian",
+        "age": 20,
+        "gender": "Hombre",
+        "music_genres": [
+            "Variado"
+        ],
+        "fav_sports": [
+            "Fútbol"
+        ],
+        "languages": [
+            "Frances",
+            "Inglés"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Nicolas Wolodarsky Franke",
+        "age": 21,
+        "gender": "Hombre",
+        "music_genres": [
+            "Variado"
+        ],
+        "fav_sports": [
+            "Curling"
+        ],
+        "languages": [
+            "Frances",
+            "Inglés",
+            "Portugués"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Valentina Vitetta",
+        "age": 19,
+        "gender": "Mujer",
+        "music_genres": [
+            "Pop"
+        ],
+        "fav_sports": [
+            "Ninguno"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Caterina Villegas",
+        "age": 20,
+        "gender": "Mujer",
+        "music_genres": [
+            "Pop"
+        ],
+        "fav_sports": [
+            "Fórmula 1"
+        ],
+        "languages": [
+            "Ingles",
+            "Frances "
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Emiliana Verdun",
+        "age": 20,
+        "gender": "No Binario",
+        "music_genres": [
+            "R&B",
+            "Pop"
+        ],
+        "fav_sports": [
+            "Fórmula 1",
+            "Volley"
+        ],
+        "languages": [
+            "Inglés",
+            "Frances"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Benjamin Toledo",
+        "age": 21,
+        "gender": "Hombre",
+        "music_genres": [
+            "Techno",
+            "Electrónica",
+            "Rock"
+        ],
+        "fav_sports": [
+            "Volley"
+        ],
+        "languages": [
+            "Inglés",
+            "Portugués"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Camilo Suárez Canónico",
+        "age": 20,
+        "gender": "Hombre",
+        "music_genres": [
+            "Pop"
+        ],
+        "fav_sports": [
+            "Ninguno"
+        ],
+        "languages": [
+            "Inglés",
+            "Frances"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Franco Setti",
+        "age": 19,
+        "gender": "Hombre",
+        "music_genres": [
+            "Variado"
+        ],
+        "fav_sports": [
+            "Tenis",
+            "Fútbol"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 11,
+        "name": "Nazaret Seranusoglu",
+        "age": 20,
+        "gender": "Hombre",
+        "music_genres": [
+            "Rap",
+            "Techno",
+            "Jazz"
+        ],
+        "fav_sports": [
+            "Fútbol",
+            "Básquet"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 12,
+        "name": "Joaquín Schanz",
+        "age": 21,
+        "gender": "Hombre",
+        "music_genres": [
+            "Pop-Rock"
+        ],
+        "fav_sports": [
+            "Fútbol",
+            "Básquet",
+            "Rugby"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 13,
+        "name": "Mariano Sanson",
+        "age": 19,
+        "gender": "Hombre",
+        "music_genres": [
+            "Pop"
+        ],
+        "fav_sports": [
+            "Fútbol",
+            "Padel",
+            "Tenis"
+        ],
+        "languages": [
+            "Inglés",
+            "Hebreo"
+        ]
+    },
+    {
+        "id": 15,
+        "name": "Estanislao Rios Zgaib",
+        "age": 19,
+        "gender": "Hombre",
+        "music_genres": [
+            "Pop"
+        ],
+        "fav_sports": [
+            "Tenis"
+        ],
+        "languages": [
+            "Ingles",
+            "Italiano"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "Federico Peitti",
+        "age": 20,
+        "gender": "Hombre",
+        "music_genres": [
+            "JPop",
+            "JRock",
+            "Pop",
+            "Rock",
+            "Rock Argentino",
+            "Musicales",
+            "Glam Rock",
+            "Scores"
+        ],
+        "fav_sports": [
+            "Fútbol"
+        ],
+        "languages": [
+            "Inglés",
+            "Frances",
+            "Japonés"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Isabel Nuñez",
+        "age": 20,
+        "gender": "Mujer",
+        "music_genres": [
+            "Rock"
+        ],
+        "fav_sports": [
+            "Fútbol",
+            "Fútbol Americano "
+        ],
+        "languages": [
+            "Inglés "
+        ]
+    },
+    {
+        "id": 18,
+        "name": "Ivan Mondrzak",
+        "age": 19,
+        "gender": "Hombre",
+        "music_genres": [
+            "Variado"
+        ],
+        "fav_sports": [
+            "Fútbol",
+            "Básquet"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 19,
+        "name": "Manuel Matías Milde",
+        "age": 21,
+        "gender": "Hombre",
+        "music_genres": [
+            "Rock",
+            "Jazz"
+        ],
+        "fav_sports": [
+            "Fútbol"
+        ],
+        "languages": [
+            "Inglés",
+            "Portugués"
+        ]
+    },
+    {
+        "id": 20,
+        "name": "Serena Marelli",
+        "age": 20,
+        "gender": "Mujer",
+        "music_genres": [
+            "Rock "
+        ],
+        "fav_sports": [
+            "Futbol"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 22,
+        "name": "Iara Guglielmetti",
+        "age": 20,
+        "gender": "Mujer",
+        "music_genres": [
+            "Urbano Latino"
+        ],
+        "fav_sports": [
+            "Futbol"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 23,
+        "name": "Ezequiel Grinblat",
+        "age": 21,
+        "gender": "Hombre",
+        "music_genres": [
+            "Rock"
+        ],
+        "fav_sports": [
+            "Fútbol"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 24,
+        "name": "María Agustina Giménez Costa",
+        "age": 21,
+        "gender": "Mujer",
+        "music_genres": [
+            "Pop",
+            "Rock"
+        ],
+        "fav_sports": [
+            "Hockey"
+        ],
+        "languages": [
+            "Inglés",
+            "Italiano"
+        ]
+    },
+    {
+        "id": 25,
+        "name": "Valentina Gayo",
+        "age": 20,
+        "gender": "Mujer",
+        "music_genres": [
+            "Pop"
+        ],
+        "fav_sports": [
+            "Fórmula 1"
+        ],
+        "languages": [
+            "Inglés",
+            "Portugués",
+            "Japonés"
+        ]
+    },
+    {
+        "id": 26,
+        "name": "Gonzalo García Vence",
+        "age": 21,
+        "gender": "Hombre",
+        "music_genres": [
+            "Techno"
+        ],
+        "fav_sports": [
+            "Fútbol",
+            "Tenis"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 28,
+        "name": "Catalina Dolhare",
+        "age": 21,
+        "gender": "Mujer",
+        "music_genres": [
+            "Pop"
+        ],
+        "fav_sports": [
+            "Hockey"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 29,
+        "name": "Tomás Curzio",
+        "age": 21,
+        "gender": "Hombre",
+        "music_genres": [
+            "Folk"
+        ],
+        "fav_sports": [
+            "Fútbol"
+        ],
+        "languages": [
+            "Inglés"
+        ]
+    },
+    {
+        "id": 30,
+        "name": "Juana Copello",
+        "age": 26,
+        "gender": "Mujer",
+        "music_genres": [
+            "Rock"
+        ],
+        "fav_sports": [
+            "Fútbol"
+        ],
+        "languages": [
+            "Inglés",
+            "Frances"
+        ]
+    },
+    {
+        "id": 31,
+        "name": "Camila Cauzzo",
+        "age": 21,
+        "gender": "Mujer",
+        "music_genres": [
+            "Variado"
+        ],
+        "fav_sports": [
+            "Tenis",
+            "fútbol"
+        ],
+        "languages": [
+            "Inglés",
+            "Italiano"
+        ]
+    },
+    {
+        "id": 36,
+        "name": "Carlos Ignacio Araujo",
+        "age": 52,
+        "gender": "Hombre",
+        "music_genres": [
+            "Jazz",
+            "PostPunk"
+        ],
+        "fav_sports": [
+            "Fútbol"
+        ],
+        "languages": [
+            "Inglés",
+            "Italiano"
+        ]
+    }
+]

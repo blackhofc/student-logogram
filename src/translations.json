@@ -1,0 +1,85 @@
+{
+    "gender": {
+        "Hombre": {
+            "id": 0
+        },
+        "Mujer": {
+            "id": 1
+        },
+        "No Binario": {
+            "id": 2
+        }
+    },
+    "music_genres": {
+        "Pop": {
+            "color": "8122E0"
+        },
+        "Rock": {
+            "color": "E52F89"
+        },
+        "Techno": {
+            "color": "57BDBA"
+        },
+        "Jazz": {
+            "color": "F5A800"
+        },
+        "Otros": {
+            "color": "00A3F5"
+        }
+    },
+    "fav_sports": {
+        "Fútbol": {
+            "id": 3
+        },
+        "Tenis": {
+            "id": 4
+        },
+        "Fórmula 1": {
+            "id": 5
+        },
+        "Básquet": {
+            "id": 6
+        },
+        "Volley": {
+            "id": 7
+        },
+        "Hockey": {
+            "id": 8
+        },
+        "Curling": {
+            "id": 9
+        },
+        "Rugby": {
+            "id": 10
+        },
+        "Padel": {
+            "id": 11
+        },
+        "Fútbol Americano ": {
+            "id": 12
+        }
+    },
+    "languages": {
+        "Español": {
+            "id": 13
+        },
+        "Inglés": {
+            "id": 14
+        },
+        "Frances": {
+            "id": 15
+        },
+        "Portugués": {
+            "id": 16
+        },
+        "Italiano": {
+            "id": 17
+        },
+        "Japonés": {
+            "id": 18
+        },
+        "Hebreo": {
+            "id": 19
+        }
+    }
+}
