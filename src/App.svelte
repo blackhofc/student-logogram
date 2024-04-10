@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
 
   // Import Utils
-  import { VARIABLES, describeStudent, loadStudents } from "./utils/utils";
+  import { VARIABLES, loadStudents } from "./utils/utils";
 
   // Import componenets
   import Student from "./components/Student.svelte";
@@ -76,11 +76,11 @@
   {/each}
 </div>
 
-<Popup visible={isPopupVisible} onClose={togglePopup}>
-  <h2 class="text-title">{slectedStudent.name}</h2>
-  <p class="text-sub">{describeStudent(slectedStudent)}</p>
-  <Student student={slectedStudent} />
-</Popup>
+<Popup
+  student={slectedStudent}
+  visible={isPopupVisible}
+  onClose={togglePopup}
+/>
 
 <style>
   .head-container {

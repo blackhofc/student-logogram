@@ -74,8 +74,16 @@ function loadStudents(){
     return parsedStudents;
 }
 
+// Icons of a student, foreach
+function studentIcons(){
+    const icons = []
+
+    return icons;
+}
+
 export {
     VARIABLES,
     describeStudent,
-    loadStudents
+    loadStudents,
+    studentIcons
 }

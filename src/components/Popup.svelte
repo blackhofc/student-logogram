@@ -1,5 +1,8 @@
 <!-- Popup.svelte -->
 <script>
+  import Student from "./Student.svelte";
+  import { describeStudent } from "../utils/utils";
+  export let student;
   export let visible;
   export let onClose;
 
@@ -11,7 +14,9 @@
 {#if visible}
   <div class="popup-overlay" on:click={closePopup}>
     <div class="popup-content" on:click|stopPropagation>
-      <slot />
+      <h2 class="text-title">{student.name}</h2>
+      <p class="text-sub">{describeStudent(student)}</p>
+      <Student {student} />
     </div>
   </div>
 {/if}
@@ -36,5 +41,9 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-left: 10%;
     margin-right: 10%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: column;
   }
 </style>
