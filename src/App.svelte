@@ -1,9 +1,8 @@
 <script>
   import { onMount } from "svelte";
 
-  // Import data
-  import students from "./students.json";
-  import symbols from "./translations.json";
+  // Import Utils
+  import { VARIABLES, describeStudent, loadStudents } from "./utils/utils";
 
   // Import componenets
   import Student from "./components/Student.svelte";
@@ -11,22 +10,13 @@
   import Container from "./components/Container.svelte";
   import Music from "./components/Music.svelte";
   import Popup from "./components/Popup.svelte";
+
+  // Variables
   let isPopupVisible = false;
   let slectedStudent = null;
 
   function togglePopup() {
     isPopupVisible = !isPopupVisible;
-  }
-
-  function describe(student) {
-    const name = student.name.split(" ")[0];
-    const gender = student.gender;
-    const age = student.age;
-    const genres = student.music_genres.join(", ");
-    const sports = student.fav_sports.join(", ");
-    const languages = student.languages.join(", ");
-
-    return `${name} es ${gender}, tiene ${age} años, escucha genero ${genres}, le gusta mirar ${sports} y habla en ${languages}.`;
   }
 
   // Define a function to handle the custom event
@@ -36,65 +26,8 @@
     slectedStudent = selectedLogogram.detail;
     console.log("Student clicked in App:", selectedLogogram);
     togglePopup();
-    // Perform any action you want when a student is clicked
   }
 
-  const variables = {
-    gender: { title: "Género", description: "Ubicado a 90°" },
-    /*age: {
-      title: "Age",
-      description: "Gender symbol size",
-    }, */
-    music_genres: {
-      title: "Intereses Musicales",
-      description: "Gradiente del logograma",
-    },
-    fav_sports: {
-      title: "Deportes Favoritos",
-      description: "Ubicados a 135°, 180°, 225°",
-    },
-    languages: { title: "Idiomas", description: "Ubicados a 0°, 45°, 315°" },
-  };
-
-  // Load student nodes with its values
-  const parsedStudents = [];
-
-  students.forEach((person) => {
-    const { id, name, age, gender, music_genres, fav_sports } = person;
-
-    const defaultColor = "#000"; // Default color if music genres are not available
-    let colors;
-
-    if (music_genres.length === 0) {
-      // If no music genres are available, duplicate the default color
-      colors = [defaultColor, defaultColor];
-    } else if (music_genres.length === 1) {
-      // If there's only one music genre, duplicate the unique color
-      colors = [music_genres[0], music_genres[0]].map(
-        (genre) =>
-          `#${
-            symbols["music_genres"][genre]?.color ||
-            symbols["music_genres"]["Otros"].color
-          }`
-      );
-    } else {
-      colors = music_genres.map(
-        (genre) =>
-          `#${
-            symbols["music_genres"][genre]?.color ||
-            symbols["music_genres"]["Otros"].color
-          }`
-      );
-    }
-
-    parsedStudents.push({
-      ...person,
-      symbol: `./images/logograms/${id}.png`,
-      gradient: colors.join(", "),
-    });
-  });
-
-  // TODO: on click student opens a right view with student name, age interest with its respective icons
   // On website mounted
   onMount(() => {});
 </script>
@@ -118,17 +51,17 @@
 </div>
 
 <div class="variables-container">
-  {#each Object.entries(variables) as [key, variable]}
+  {#each Object.entries(VARIABLES) as [key, variable]}
     <Variable {variable} />
 
     <div class="row-container">
       <div class="container">
         {#if key === "music_genres"}
-          {#each Object.entries(symbols[key]) as [name, symbol]}
+          {#each Object.entries(variable.data) as [name, symbol]}
             <Music {name} v={symbol} />
           {/each}
         {:else}
-          {#each Object.entries(symbols[key]) as [name, symbol]}
+          {#each Object.entries(variable.data) as [name, symbol]}
             <Container {name} {symbol} />
           {/each}
         {/if}
@@ -138,14 +71,14 @@
 </div>
 
 <div class="logograms-container">
-  {#each parsedStudents as student}
+  {#each loadStudents() as student}
     <Student {student} on:studentClicked={handleStudentClick} />
   {/each}
 </div>
 
 <Popup visible={isPopupVisible} onClose={togglePopup}>
   <h2 class="text-title">{slectedStudent.name}</h2>
-  <p class="text-sub">{describe(slectedStudent)}</p>
+  <p class="text-sub">{describeStudent(slectedStudent)}</p>
   <Student student={slectedStudent} />
 </Popup>
 
