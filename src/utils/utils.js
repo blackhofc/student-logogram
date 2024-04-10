@@ -75,15 +75,45 @@ function loadStudents(){
 }
 
 // Icons of a student, foreach
-function studentIcons(){
-    const icons = []
+function logogramSymbols(student) {
+    if(!student) return [];
 
-    return icons;
+
+    
+    const gender = VARIABLES.gender.data[student.gender];
+    const music_genres = {};
+    Object.keys(VARIABLES.music_genres.data).forEach((genre) => {
+        if(student.music_genres.includes(genre)){
+            music_genres[genre] = VARIABLES.music_genres.data[genre];
+        }
+    });
+    
+    const fav_sports = {};
+    Object.keys(VARIABLES.fav_sports.data).forEach((sport) => {
+        if(student.fav_sports.includes(sport)){
+            fav_sports[sport] = VARIABLES.fav_sports.data[sport];
+        }
+    });
+
+    const languages = {};
+    Object.keys(VARIABLES.languages.data).forEach((lang) => {
+        if(student.languages.includes(lang)){
+            languages[lang] = VARIABLES.languages.data[lang];
+        }
+    });
+
+    const variables = {
+        gender,
+        music_genres,
+        fav_sports,
+        languages
+    }
+    console.log(variables)
 }
 
 export {
     VARIABLES,
     describeStudent,
     loadStudents,
-    studentIcons
+    logogramSymbols
 }

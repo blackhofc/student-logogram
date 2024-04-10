@@ -1,12 +1,12 @@
 <!-- Popup.svelte -->
 <script>
   import Student from "./Student.svelte";
-  import { describeStudent } from "../utils/utils";
+  import { describeStudent } from "../utils/utils.js";
   export let student;
   export let visible;
   export let onClose;
 
-  function closePopup() {
+  function closePopup(value) {
     onClose();
   }
 </script>
@@ -17,6 +17,7 @@
       <h2 class="text-title">{student.name}</h2>
       <p class="text-sub">{describeStudent(student)}</p>
       <Student {student} />
+      <div class="symbols-container"></div>
     </div>
   </div>
 {/if}
@@ -45,5 +46,11 @@
     position: relative;
     align-items: center;
     flex-direction: column;
+  }
+
+  .symbols-container {
+    width: 100%;
+    height: 100px;
+    background-color: black;
   }
 </style>

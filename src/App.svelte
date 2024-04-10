@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
 
   // Import Utils
-  import { VARIABLES, loadStudents } from "./utils/utils";
+  import { VARIABLES, loadStudents, logogramSymbols } from "./utils/utils";
 
   // Import componenets
   import Student from "./components/Student.svelte";
@@ -13,7 +13,7 @@
 
   // Variables
   let isPopupVisible = false;
-  let slectedStudent = null;
+  let selectedStudent = null;
 
   function togglePopup() {
     isPopupVisible = !isPopupVisible;
@@ -23,8 +23,9 @@
   function handleStudentClick(event) {
     // Access the student data from the event detail
     const selectedLogogram = event.detail;
-    slectedStudent = selectedLogogram.detail;
+    selectedStudent = selectedLogogram.detail;
     console.log("Student clicked in App:", selectedLogogram);
+    logogramSymbols(selectedStudent);
     togglePopup();
   }
 
@@ -77,7 +78,7 @@
 </div>
 
 <Popup
-  student={slectedStudent}
+  student={selectedStudent}
   visible={isPopupVisible}
   onClose={togglePopup}
 />
