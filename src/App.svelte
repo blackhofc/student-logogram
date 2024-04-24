@@ -5,11 +5,11 @@
   import { VARIABLES, loadStudents, logogramSymbols } from "./utils/utils";
 
   // Import componenets
-  import Student from "./Components/Student.svelte";
-  import Footer from "./Components/Footer.svelte";
-  import Popup from "./Components/Popup/Select.svelte";
-  import PopAbout from "./Components/Popup/About.svelte";
-  import SmokeEffect from "./Components/Effects/Smoke.svelte";
+  import Student from "./Component/Student.svelte";
+  import Footer from "./Component/Footer.svelte";
+  import Popup from "./Component/Popup/Select.svelte";
+  import PopAbout from "./Component/Popup/About.svelte";
+  import SmokeEffect from "./Component/Effects/Smoke.svelte";
 
   // Variables
   let isAboutVisible = false;

@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import SmokeEffect from "./Components/Effects/Smoke.svelte";
+  import SmokeEffect from "./Component/Effects/Smoke.svelte";
 
   let style_1 = `mask-image: url(./images/logograms/8.png); background-image: linear-gradient(to bottom right, black, black);`;
   let style_2 = `mask-image: url(./images/logograms/8.png); background-image: linear-gradient(to bottom right, red, blue);`;
