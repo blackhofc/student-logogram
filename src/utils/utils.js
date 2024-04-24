@@ -20,9 +20,19 @@ const VARIABLES = {
       data: symbols.fav_sports
     },
     languages: { title: "Idiomas", description: "Ubicados a 0°, 45°, 315°", data: symbols.languages },
-  };
+};
+
+function minIcon(){
+    
+    // <img class="image-container-logogram" src={icon} alt="" />
+    return ''
+}
 
 function describeStudent(student) {
+    if(!student){
+        return;
+    }
+
     const name = student.name.split(" ")[0];
     const gender = student.gender;
     const age = student.age;
@@ -33,9 +43,9 @@ function describeStudent(student) {
     return `${name} es ${gender}, tiene ${age} años, escucha genero ${genres}, le gusta mirar ${sports} y habla en ${languages}.`;
   }
 
-function loadStudents(){
+function loadStudents(selectedId){
     const parsedStudents = [];
-
+    students.sort((a, b) => a.name.localeCompare(b.name));
     students.forEach((person) => {
         const { id, name, age, gender, music_genres, fav_sports } = person;
 
@@ -63,11 +73,15 @@ function loadStudents(){
             }`
         );
         }
+        const selected = selectedId === id;
+        // console.log(selectedId, id, selected);
 
         parsedStudents.push({
         ...person,
+        grams: logogramSymbols(person),
         symbol: `./images/logograms/${id}.png`,
         gradient: colors.join(", "),
+        selected
         });
 
     });
@@ -76,39 +90,28 @@ function loadStudents(){
 
 // Icons of a student, foreach
 function logogramSymbols(student) {
-    if(!student) return [];
-
-
-    
-    const gender = VARIABLES.gender.data[student.gender];
-    const music_genres = {};
-    Object.keys(VARIABLES.music_genres.data).forEach((genre) => {
-        if(student.music_genres.includes(genre)){
-            music_genres[genre] = VARIABLES.music_genres.data[genre];
-        }
-    });
-    
-    const fav_sports = {};
-    Object.keys(VARIABLES.fav_sports.data).forEach((sport) => {
-        if(student.fav_sports.includes(sport)){
-            fav_sports[sport] = VARIABLES.fav_sports.data[sport];
-        }
-    });
-
-    const languages = {};
-    Object.keys(VARIABLES.languages.data).forEach((lang) => {
-        if(student.languages.includes(lang)){
-            languages[lang] = VARIABLES.languages.data[lang];
-        }
-    });
+    if (!student) return [];
 
     const variables = {
-        gender,
-        music_genres,
-        fav_sports,
-        languages
-    }
-    console.log(variables)
+        gender: {[student.gender]: symbols.gender[student.gender]},
+        /*music_genres: Object.fromEntries(
+            Object.entries(symbols.music_genres)
+                .filter(([genre]) => student.music_genres.includes(genre))
+                .map(([genre, data]) => [genre, data])
+        ), */
+        fav_sports: Object.fromEntries(
+            Object.entries(symbols.fav_sports)
+                .filter(([sport]) => student.fav_sports.includes(sport))
+                .map(([sport, data]) => [sport, data])
+        ),
+        languages: Object.fromEntries(
+            Object.entries(symbols.languages)
+                .filter(([lang]) => student.languages.includes(lang))
+                .map(([lang, data]) => [lang, data])
+        )
+    };
+
+    return variables;
 }
 
 export {

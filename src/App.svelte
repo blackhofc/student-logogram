@@ -5,13 +5,14 @@
   import { VARIABLES, loadStudents, logogramSymbols } from "./utils/utils";
 
   // Import componenets
-  import Student from "./components/Student.svelte";
-  import Variable from "./components/Variable.svelte";
-  import Container from "./components/Container.svelte";
-  import Music from "./components/Music.svelte";
-  import Popup from "./components/Popup.svelte";
+  import Student from "./Components/Student.svelte";
+  import Footer from "./Components/Footer.svelte";
+  import Popup from "./Components/Popup/Select.svelte";
+  import PopAbout from "./Components/Popup/About.svelte";
+  import SmokeEffect from "./Components/Effects/Smoke.svelte";
 
   // Variables
+  let isAboutVisible = false;
   let isPopupVisible = false;
   let selectedStudent = null;
 
@@ -34,16 +35,19 @@
 </script>
 
 <div class="head-container">
-  <div class="text-title" style="font-size: 65px; margin-top: 32px;">
+  <div
+    class="text-title"
+    style="z-index: 999; font-size: 65px; margin-top: 16px;"
+  >
     Student Logogram
   </div>
-  <div style="margin-top: 15px;" class="text-sub">
+  <div style="z-index: 999; margin-top: 15px;" class="text-sub">
     La representación en logograma de los intereses de un estudiante en el
     lenguaje alien
   </div>
   <a
     class="text-sub"
-    style=" text-decoration: underline; text-underline-offset: 5px"
+    style="z-index: 999; text-decoration: underline; text-underline-offset: 5px"
     href="https://creativechair.org/stephen-wolfram/"
     target="_blank"
   >
@@ -51,36 +55,26 @@
   </a>
 </div>
 
-<div class="variables-container">
-  {#each Object.entries(VARIABLES) as [key, variable]}
-    <Variable {variable} />
-
-    <div class="row-container">
-      <div class="container">
-        {#if key === "music_genres"}
-          {#each Object.entries(variable.data) as [name, symbol]}
-            <Music {name} v={symbol} />
-          {/each}
-        {:else}
-          {#each Object.entries(variable.data) as [name, symbol]}
-            <Container {name} {symbol} />
-          {/each}
-        {/if}
-      </div>
-    </div>
-  {/each}
-</div>
-
-<div class="logograms-container">
+<div class="logograms-container" style="margin-top: 100px;">
   {#each loadStudents() as student}
     <Student {student} on:studentClicked={handleStudentClick} />
   {/each}
 </div>
 
+<Footer />
+<SmokeEffect />
+
 <Popup
   student={selectedStudent}
   visible={isPopupVisible}
   onClose={togglePopup}
+/>
+
+<PopAbout
+  visible={isAboutVisible}
+  onClose={function () {
+    isAboutVisible = !isAboutVisible;
+  }}
 />
 
 <style>
@@ -94,35 +88,6 @@
     justify-content: space-between;
   }
 
-  .variables-container {
-    display: flex;
-    position: relative;
-    align-items: start;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding-left: 32px;
-    padding-right: 32px;
-    align-items: center;
-  }
-
-  .row-container {
-    display: flex;
-    position: relative;
-    align-items: center;
-    flex-direction: row;
-    max-width: 80%;
-    overflow-x: auto;
-  }
-
-  .container {
-    display: flex;
-    align-items: start;
-    height: auto;
-    flex-wrap: nowrap; /* Prevent wrapping onto multiple lines */
-    flex-direction: row;
-    margin-bottom: 8px;
-  }
-
   .logograms-container {
     display: flex;
     position: relative;
@@ -131,10 +96,12 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 20px;
+    margin-bottom: 64px;
   }
 
   :global(body) {
-    background-color: white;
+    background-image: url("./images/back.jpg");
+    background-attachment: fixed;
     height: 100vh;
     width: 100%;
     background-position: center center;
@@ -157,8 +124,8 @@
 
   /* width */
   ::-webkit-scrollbar {
-    height: 10px;
-    width: 2px;
+    height: 7px;
+    width: 7px;
   }
 
   /* Track */

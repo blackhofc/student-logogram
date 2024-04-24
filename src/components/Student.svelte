@@ -1,33 +1,27 @@
-<!-- Ship.svelte -->
+<!-- Student.svelte -->
 <script>
   import { createEventDispatcher } from "svelte";
 
   export let student;
-  const style = `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, ${student.gradient});`;
+  let style = `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, #000, #000);`;
 
   const dispatch = createEventDispatcher();
 
   function handleClick() {
-    // Dispatch a custom event with the student data
     dispatch("studentClicked", { detail: student });
   }
 
-  let tooltipText = "Additional information goes here.";
-
   function handleMouseOver() {
-    // You can modify this function to change tooltip text dynamically if needed
-    console.log("hover!!", student.name);
-    // tooltipText = student.additionalInfo;
+    console.log("HOVER", student.name);
+    style = `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, ${student.gradient});`;
   }
 
   function handleMouseLeave() {
-    // Reset tooltip text or perform any other actions when mouse leaves
-    console.log("leaved-.-", student.name);
-    // tooltipText = ""; // Clear tooltip text
+    console.log("LEAVE", student.name);
+    style = `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, #000, #000);`;
   }
 
   function handleFocus() {
-    // This function mirrors the functionality of handleMouseOver for keyboard focus
     handleMouseOver();
   }
 </script>
@@ -48,7 +42,6 @@
   </div>
 
   <p class="text-name">{student.name}</p>
-  <!-- Tooltip -->
 </div>
 
 <style>
@@ -70,24 +63,7 @@
     align-items: center;
     overflow: hidden;
     position: relative;
-    border: 1px solid black;
-  }
-
-  .gradient-image {
-    width: 100%;
-    height: 100%;
-    -webkit-mask-size: cover;
-    mask-position: center;
-    mask-repeat: no-repeat;
-    mask-size: 100%;
-    mask-mode: alpha;
-    margin-top: 15px;
-    color: transparent;
-    background-size: 200% 200%;
-    animation: animateGradient 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    background-size: 200% 200%;
-    background-position: 0% 100%;
-    animation-direction: alternate;
+    border: 0px solid black;
   }
 
   .text-name {
@@ -101,14 +77,79 @@
     margin-top: 5px;
   }
 
-  .image-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    z-index: 2;
+  .gradient-image {
+    width: 350px;
+    height: 350px;
+    mask-size: 100%;
+    cursor: pointer;
+  }
+
+  .text-name:hover {
+    animation: expandName 0.1s ease-in-out forwards;
+  }
+
+  .text-name:not(:hover) {
+    animation: retractName 0.1s ease-in-out forwards;
+  }
+
+  @keyframes expandName {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+      z-index: 1000;
+    }
+  }
+
+  @keyframes retractName {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      z-index: 0;
+    }
+  }
+
+  .gradient-image:hover {
+    animation: rotateAndDissolve 0.5s ease-in-out forwards;
+  }
+
+  .gradient-image:not(:hover) {
+    animation: revertAnimation 0.5s ease-in-out forwards;
+  }
+
+  @keyframes rotateAndDissolve {
+    0% {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: rotate(180deg) scale(1.1);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(360deg) scale(1.2);
+      z-index: 1000;
+      opacity: 1;
+    }
+  }
+
+  @keyframes revertAnimation {
+    0% {
+      transform: rotate(360deg) scale(1.2);
+      z-index: 1000;
+      opacity: 1;
+    }
+    50% {
+      transform: rotate(180deg) scale(1.1);
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
   }
 
   @keyframes animateGradient {

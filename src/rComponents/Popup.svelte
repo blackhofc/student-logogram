@@ -1,10 +1,17 @@
 <!-- Popup.svelte -->
 <script>
-  import Student from "./Student.svelte";
+  import Student from "./Logogram.svelte";
   import { describeStudent } from "../utils/utils.js";
   export let student;
   export let visible;
   export let onClose;
+
+  function getSrc(key) {
+    console.log(student.grams, key);
+    if (!student?.grams?.[key]) return;
+
+    return `./images/translator/${student.grams[key].id}.png`;
+  }
 
   function closePopup(value) {
     onClose();
@@ -17,7 +24,13 @@
       <h2 class="text-title">{student.name}</h2>
       <p class="text-sub">{describeStudent(student)}</p>
       <Student {student} />
-      <div class="symbols-container"></div>
+      <div class="symbols-container">
+        {#each Object.keys(student.grams) as value}
+          {#if getSrc(value) !== undefined}
+            <img class="image-container-logogram" src={getSrc(value)} alt="" />
+          {/if}
+        {/each}
+      </div>
     </div>
   </div>
 {/if}
@@ -51,6 +64,27 @@
   .symbols-container {
     width: 100%;
     height: 100px;
-    background-color: black;
+    display: flex;
+    position: relative;
+    background-color: transparent;
+    align-items: center;
+  }
+
+  .image-container-logogram {
+    width: 80px;
+    height: 80px;
+    max-width: 100%;
+    display: flex;
+    position: relative;
+  }
+
+  .text-symbol {
+    font-family: "Gotham Light", sans-serif; /* Fallback to sans-serif if Gotham Light is not available */
+    font-size: 24px;
+    font-weight: normal; /* Make sure to set font-weight to normal if you're using a specific font weight */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    align-items: center;
+    margin-block-end: 0px;
   }
 </style>
