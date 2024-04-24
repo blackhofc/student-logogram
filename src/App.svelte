@@ -61,7 +61,10 @@
   {/each}
 </div>
 
-<Footer />
+<div style="display: flex; position: relative; z-index: 1000;">
+  <Footer />
+</div>
+
 <SmokeEffect />
 
 <Popup
@@ -89,14 +92,11 @@
   }
 
   .logograms-container {
-    display: flex;
-    position: relative;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px;
-    margin-bottom: 64px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 10px;
   }
 
   :global(body) {
