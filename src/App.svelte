@@ -8,6 +8,6 @@
   <Route path="/" component={MainPage} />
   <Route path="/logogram/:id" component={LogogramPage} />
   <!-- Define other routes as needed -->
-  <Route component={MainPage} />
+  <!--<Route component={MainPage} /> -->
   <!-- This will act as the default route -->
 </Router>

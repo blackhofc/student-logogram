@@ -36,7 +36,7 @@
 <style>
   :global(body) {
     background-image: url("./images/back.jpg");
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-position: center center;
     background-repeat: no-repeat;

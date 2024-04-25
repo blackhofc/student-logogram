@@ -85,7 +85,7 @@
   }
 
   .flex-box:hover .gradient-image {
-    animation: rotateAndDissolve 0.5s ease-in-out forwards;
+    animation: rotateAndDissolve 0.4s ease-in-out forwards;
   }
 
   .flex-box:hover .text-name {
@@ -93,7 +93,7 @@
   }
 
   .flex-box:not(:hover) .gradient-image {
-    animation: revertAnimation 0.5s ease-in-out forwards;
+    animation: revertAnimation 0.4s ease-in-out forwards;
   }
 
   .flex-box:not(:hover) .text-name {
