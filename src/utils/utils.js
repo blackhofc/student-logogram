@@ -79,8 +79,8 @@ function loadStudents(selectedId){
         parsedStudents.push({
         ...person,
         grams: logogramSymbols(person),
-        symbol: `/public/images/logograms/${id}.png`,
-        symbolBig: `/public/images/logograms/big_${id}.png`,
+        symbol: `/images/logograms/${id}.png`,
+        symbolBig: `/images/logograms/big_${id}.png`,
         gradient: colors.join(", "),
         selected
         });

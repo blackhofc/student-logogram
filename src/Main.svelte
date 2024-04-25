@@ -126,7 +126,7 @@
   }
 
   :global(body) {
-    background-image: url("/public/images/background.jpg");
+    background-image: url("/images/background.jpg");
     background-attachment: fixed;
     height: 100vh;
     width: 100%;

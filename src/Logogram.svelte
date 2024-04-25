@@ -51,7 +51,7 @@
   style="display: flex; position: absolute; margin-top: 25px; margin-left: 16px"
 >
   <img
-    src={"/public/images/arrow_back.png"}
+    src={"/images/arrow_back.png"}
     style="max-width: 150px; z-index: 1000"
     alt=""
   />
@@ -212,7 +212,7 @@
   }
 
   :global(body) {
-    background-image: url("/public/images/background.jpg");
+    background-image: url("/images/background.jpg");
     background-attachment: fixed;
     height: 100vh;
     width: 100%;

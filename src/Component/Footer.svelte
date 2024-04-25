@@ -7,7 +7,7 @@
 
 <style>
   .footer {
-    background-image: url("/public/images/footer.png");
+    background-image: url("/images/footer.png");
     padding: 20px 0;
     text-align: center;
     width: 100%;
