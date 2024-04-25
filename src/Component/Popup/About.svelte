@@ -1,11 +1,6 @@
 <!-- Popup.svelte -->
 <script>
-  import {
-    VARIABLES,
-    loadStudents,
-    logogramSymbols,
-    describeStudent,
-  } from "../../utils/utils.js";
+  import { VARIABLES } from "../../utils/utils.js";
 
   import Variable from "../Variable.svelte";
   import Container from "../Container.svelte";
@@ -19,6 +14,8 @@
   }
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 {#if visible}
   <div class="popup-overlay" on:click={closePopup}>
     <div class="popup-content" on:click|stopPropagation>
@@ -63,12 +60,13 @@
 
 <style>
   .popup-overlay {
+    z-index: 1500;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-black background */
+    background-color: rgba(0, 0, 0, 0.103); /* Semi-black background */
     display: flex;
     justify-content: center;
     align-items: center;

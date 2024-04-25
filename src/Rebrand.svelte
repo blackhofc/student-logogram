@@ -9,8 +9,8 @@
   } from "./utils/utils";
 
   // Import componenets
-  import Student from "./rComponents/Logogram.svelte";
-  import Popup from "./rComponents/Popup.svelte";
+  import Student from "./Component/SmallGram.svelte";
+  import Popup from "./Component/Popup/Select.svelte";
 
   // Variables
   let isPopupVisible = false;
@@ -33,7 +33,7 @@
     students = loadStudents(selectedStudent.id);
 
     console.log("Student clicked in App:", selectedStudent);
-    style = `mask-image: url(${selectedStudent.symbol}); background-image: linear-gradient(to bottom right, ${selectedStudent.gradient});`;
+    style = `mask-image: url(${selectedStudent.symbolBig}); background-image: linear-gradient(to bottom right, ${selectedStudent.gradient});`;
     logogramSymbols(selectedStudent);
   }
 
@@ -43,6 +43,13 @@
     handleStudentClick();
   });
 </script>
+
+<div
+  class="back"
+  style="display: flex; position: absolute; margin-top: 25px; margin-left: 16px"
+>
+  <img src={"/public/images/arrow_back.png"} style="max-width: 150px;" alt="" />
+</div>
 
 <div class="page">
   <div class="row-container">
@@ -110,6 +117,9 @@
     overflow-y: auto;
     justify-content: center;
     background-color: #0000008a;
+    margin-left: 16px;
+    padding: 8px;
+    border-radius: 10px;
     /*justify-content: space-between; */
   }
 
@@ -144,7 +154,6 @@
     mask-repeat: no-repeat;
     mask-size: 100%;
     mask-mode: alpha;
-    margin-top: 15px;
     color: transparent;
     background-size: 200% 200%;
     animation: animateGradient 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -163,15 +172,6 @@
     100% {
       background-position: -200% 50%;
     }
-  }
-
-  :global(body) {
-    background-color: white;
-    height: 100vh;
-    width: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
   }
 
   .text-title {
@@ -209,5 +209,15 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #808080;
+  }
+
+  :global(body) {
+    background-image: url("/public/images/background.jpg");
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>

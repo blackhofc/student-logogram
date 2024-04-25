@@ -99,16 +99,6 @@
     gap: 10px;
   }
 
-  :global(body) {
-    background-image: url("/public/images/background.jpg");
-    background-attachment: fixed;
-    height: 100vh;
-    width: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
   .text-title {
     font-family: "Gotham Light", sans-serif;
     font-size: 50px;
@@ -143,5 +133,15 @@
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #141414;
+  }
+
+  :global(body) {
+    background-image: url("/public/images/background.jpg");
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 </style>

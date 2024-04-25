@@ -4,7 +4,7 @@
   export let student;
 
   let styles = {
-    mask: `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, #FDFDFD, #FDFDFD);`,
+    mask: `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, #E5E5E5, #E5E5E5);`,
     card: "background: #0000008a;",
   };
 
@@ -14,9 +14,9 @@
   $: {
     if (student.selected) {
       styles.mask = `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, #212224, #212224);`;
-      styles.card = "background: #FDFDFD;";
+      styles.card = "background: #E5E5E5;";
     } else {
-      styles.mask = `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, #FDFDFD, #FDFDFD);`;
+      styles.mask = `mask-image: url(${student.symbol}); background-image: linear-gradient(to bottom right, #E5E5E5, #E5E5E5);`;
       styles.card = "background: #0000008a;";
     }
   }
@@ -75,6 +75,7 @@
     position: relative;
     border: 0px solid black;
     padding-bottom: 1px;
+    border-radius: 5px;
   }
 
   .gradient-image {

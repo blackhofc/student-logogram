@@ -1,6 +1,6 @@
 // Import data
-import students from "../students.json";
-import symbols from "../translations.json";
+import students from "../Files/students.json";
+import symbols from "../Files/translations.json";
 
 const VARIABLES = {
     gender: { title: "Género", description: "Ubicado a 90°", data: symbols.gender },
@@ -80,6 +80,7 @@ function loadStudents(selectedId){
         ...person,
         grams: logogramSymbols(person),
         symbol: `./images/logograms/${id}.png`,
+        symbolBig: `./images/logograms/big_${id}.png`,
         gradient: colors.join(", "),
         selected
         });
