@@ -79,8 +79,8 @@ function loadStudents(selectedId){
         parsedStudents.push({
         ...person,
         grams: logogramSymbols(person),
-        symbol: `./images/logograms/${id}.png`,
-        symbolBig: `./images/logograms/big_${id}.png`,
+        symbol: `/public/images/logograms/${id}.png`,
+        symbolBig: `/public/images/logograms/big_${id}.png`,
         gradient: colors.join(", "),
         selected
         });
@@ -115,9 +115,17 @@ function logogramSymbols(student) {
     return variables;
 }
 
+function extractParams(window) {
+    const path = window.location.pathname;
+    const segments = path.split('/');
+    const id = segments[segments.length - 1];
+    return { id };
+}
+
 export {
     VARIABLES,
     describeStudent,
     loadStudents,
-    logogramSymbols
+    logogramSymbols,
+    extractParams
 }

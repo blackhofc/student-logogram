@@ -10,7 +10,7 @@
   let style = `mask-image: url(${student?.symbol}); background-image: linear-gradient(to bottom right, ${student?.gradient});`;
 
   function getSrc(key, value) {
-    if (!student?.grams?.[key]?.[value]) return;
+    if (!student?.grams?.[key]?.[value]?.id) return;
     console.log(
       { key, value },
       `./images/translator/${student.grams[key][value].id}.png`

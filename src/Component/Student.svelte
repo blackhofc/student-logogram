@@ -84,40 +84,20 @@
     cursor: pointer;
   }
 
-  .text-name:hover {
-    animation: expandName 0.1s ease-in-out forwards;
-  }
-
-  .text-name:not(:hover) {
-    animation: retractName 0.1s ease-in-out forwards;
-  }
-
-  @keyframes expandName {
-    0% {
-      transform: scale(1);
-    }
-    100% {
-      transform: scale(1.2);
-      z-index: 1000;
-    }
-  }
-
-  @keyframes retractName {
-    0% {
-      transform: scale(1.2);
-    }
-    100% {
-      transform: scale(1);
-      z-index: 0;
-    }
-  }
-
-  .gradient-image:hover {
+  .flex-box:hover .gradient-image {
     animation: rotateAndDissolve 0.5s ease-in-out forwards;
   }
 
-  .gradient-image:not(:hover) {
+  .flex-box:hover .text-name {
+    animation: expandName 0.1s ease-in-out forwards;
+  }
+
+  .flex-box:not(:hover) .gradient-image {
     animation: revertAnimation 0.5s ease-in-out forwards;
+  }
+
+  .flex-box:not(:hover) .text-name {
+    animation: retractName 0.1s ease-in-out forwards;
   }
 
   @keyframes rotateAndDissolve {
@@ -149,6 +129,26 @@
     100% {
       transform: rotate(0deg) scale(1);
       opacity: 1;
+    }
+  }
+
+  @keyframes expandName {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+      z-index: 1000;
+    }
+  }
+
+  @keyframes retractName {
+    0% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+      z-index: 0;
     }
   }
 

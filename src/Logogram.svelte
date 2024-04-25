@@ -1,29 +1,26 @@
 <script>
   import { onMount } from "svelte";
+  import { Link } from "svelte-routing";
 
   // Import Utils
-  import {
-    loadStudents,
-    logogramSymbols,
-    describeStudent,
-  } from "./utils/utils";
+  import { loadStudents, describeStudent, extractParams } from "./utils/utils";
 
   // Import componenets
   import Student from "./Component/SmallGram.svelte";
-  import Popup from "./Component/Popup/Select.svelte";
+  import SmokeEffect from "./Component/Effects/Smoke.svelte";
+
+  // Retrieve the id parameter from the URL
+  const params = extractParams(window);
+  console.log(params.id);
 
   // Variables
-  let isPopupVisible = false;
   let selectedStudent = null;
   let style = "";
   let students = loadStudents();
 
-  function togglePopup() {
-    isPopupVisible = !isPopupVisible;
-  }
-
   // Define a function to handle the custom event
   function handleStudentClick(event) {
+    console.log("event", event);
     // Access the student data from the event detail
     if (event) {
       const selectedLogogram = event.detail;
@@ -34,22 +31,31 @@
 
     console.log("Student clicked in App:", selectedStudent);
     style = `mask-image: url(${selectedStudent.symbolBig}); background-image: linear-gradient(to bottom right, ${selectedStudent.gradient});`;
-    logogramSymbols(selectedStudent);
   }
 
   // On website mounted
   onMount(() => {
-    selectedStudent = students.find((student) => student.id === 8);
+    console.log(students);
+    selectedStudent = students.find(
+      (student) => student.id === parseInt(params.id)
+    );
+    console.log(selectedStudent);
+
     handleStudentClick();
   });
 </script>
 
-<div
+<Link
+  to="/"
   class="back"
   style="display: flex; position: absolute; margin-top: 25px; margin-left: 16px"
 >
-  <img src={"/public/images/arrow_back.png"} style="max-width: 150px;" alt="" />
-</div>
+  <img
+    src={"/public/images/arrow_back.png"}
+    style="max-width: 150px; z-index: 1000"
+    alt=""
+  />
+</Link>
 
 <div class="page">
   <div class="row-container">
@@ -73,12 +79,7 @@
     </div>
   </div>
 </div>
-
-<Popup
-  student={selectedStudent}
-  visible={isPopupVisible}
-  onClose={togglePopup}
-/>
+<SmokeEffect />
 
 <style>
   .page {
@@ -90,6 +91,7 @@
     width: auto;
     flex-direction: row;
     align-items: center;
+    z-index: 1500;
   }
 
   .row-container {
@@ -142,8 +144,6 @@
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-y: auto;
-    /*background-color: red;
-    justify-content: space-between; */
   }
 
   .gradient-image {
@@ -182,7 +182,7 @@
 
   .text-sub {
     font-family: "Gotham Light", sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: #797979;
     margin-left: 4px;
   }

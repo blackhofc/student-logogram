@@ -18,20 +18,25 @@
 
     // Continuously add particles to the smoke effect
     setInterval(function () {
-      smokeMachine.addsmoke(
-        Math.random() * canvas.width, // Random x position within canvas width
-        Math.random() * canvas.height, // Random y position within canvas height
-        2, // Number of particles to add
-        {
-          minVx: -0.02, // Adjust minimum x velocity
-          maxVx: 0.02, // Adjust maximum x velocity
-          minVy: -0.02, // Adjust minimum y velocity
-          maxVy: -0.01, // Adjust maximum y velocity
-          minScale: 10, // Adjust minimum particle scale
-          maxScale: 1, // Adjust maximum particle scale
-        }
-      );
+      try {
+        smokeMachine.addsmoke(
+          Math.random() * canvas.width, // Random x position within canvas width
+          Math.random() * canvas.height, // Random y position within canvas height
+          2, // Number of particles to add
+          {
+            minVx: -0.02, // Adjust minimum x velocity
+            maxVx: 0.02, // Adjust maximum x velocity
+            minVy: -0.02, // Adjust minimum y velocity
+            maxVy: -0.01, // Adjust maximum y velocity
+            minScale: 10, // Adjust minimum particle scale
+            maxScale: 1, // Adjust maximum particle scale
+          }
+        );
+      } catch (e) {
+        // console.log("failed smoke", e);
+      }
     }, 100); // Adjust the interval as needed
+
     return () => {
       //party.stop();
     };
