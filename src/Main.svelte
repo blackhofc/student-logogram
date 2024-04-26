@@ -57,7 +57,11 @@
   {/each}
 </div>
 
-<div style="display: flex; position: relative; z-index: 1000;">
+<div
+  style="display: flex; flex-direction: column; min-height: 100vh; position: relative; z-index: 1000;"
+>
+  <div style="flex: 1;"></div>
+  <!-- Placeholder to push footer to the bottom -->
   <Footer />
 </div>
 
