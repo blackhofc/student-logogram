@@ -30,39 +30,36 @@
   onMount(() => {});
 </script>
 
-<div class="head-container">
+<div style="display: flex; postion:relative; flex-direction: column;">
+  <div class="head-container" style="z-index: 1000;">
+    <div class="text-title" style="font-size: 65px; margin-top: 16px;">
+      Student Logogram
+    </div>
+    <div style="margin-top: 15px;" class="text-sub">
+      La representación en logograma de los intereses de un estudiante en el
+      lenguaje alien
+    </div>
+    <a
+      class="text-sub"
+      style="text-decoration: underline; text-underline-offset: 5px"
+      href="https://creativechair.org/stephen-wolfram/"
+      target="_blank"
+    >
+      (Referencia de Inspiración)
+    </a>
+  </div>
+
+  <div class="logograms-container" style="margin-top: 100px;">
+    {#each loadStudents() as student}
+      <Student {student} on:studentClicked={handleStudentClick} />
+    {/each}
+  </div>
+
   <div
-    class="text-title"
-    style="z-index: 999; font-size: 65px; margin-top: 16px;"
+    style="display: flex; position: relative; z-index: 1000; max-height: 150px; bottom:0;"
   >
-    Student Logogram
+    <Footer />
   </div>
-  <div style="z-index: 999; margin-top: 15px;" class="text-sub">
-    La representación en logograma de los intereses de un estudiante en el
-    lenguaje alien
-  </div>
-  <a
-    class="text-sub"
-    style="z-index: 999; text-decoration: underline; text-underline-offset: 5px"
-    href="https://creativechair.org/stephen-wolfram/"
-    target="_blank"
-  >
-    (Referencia de Inspiración)
-  </a>
-</div>
-
-<div class="logograms-container" style="margin-top: 100px;">
-  {#each loadStudents() as student}
-    <Student {student} on:studentClicked={handleStudentClick} />
-  {/each}
-</div>
-
-<div
-  style="display: flex; flex-direction: column; min-height: 100vh; position: relative; z-index: 1000;"
->
-  <div style="flex: 1;"></div>
-  <!-- Placeholder to push footer to the bottom -->
-  <Footer />
 </div>
 
 <SmokeEffect />
