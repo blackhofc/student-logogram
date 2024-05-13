@@ -163,4 +163,16 @@
       background-position: -200% 50%;
     }
   }
+
+  @keyframes smooth {
+    0% {
+      transform: translateX(-5px) scale(1);
+    }
+    50% {
+      transform: translateX(5px) scale(1.02);
+    }
+    100% {
+      transform: translateX(-5px) scale(1);
+    }
+  }
 </style>

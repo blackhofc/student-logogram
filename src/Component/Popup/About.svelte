@@ -21,9 +21,11 @@
     <div class="popup-content" on:click|stopPropagation>
       <div class="head-container">
         <div class="text-title">Student Logogram</div>
-        <div style="margin-top: 15px;" class="text-sub">
-          La representación en logograma de los intereses de un estudiante en el
-          lenguaje alien
+        <div style="margin-top: 15px; text-align: center;" class="text-sub">
+          Proyecto de visualización de datos inspirado en la película
+          "Arrival".Descubre cómo transformamos las respuestas de una encuesta
+          en logogramas, capturando intereses y preferencias en un lenguaje
+          visual único.
         </div>
         <a
           class="text-sub"

@@ -30,7 +30,7 @@
     students = loadStudents(selectedStudent.id);
 
     console.log("Student clicked in App:", selectedStudent);
-    style = `mask-image: url(${selectedStudent.symbolBig}); background-image: linear-gradient(to bottom right, ${selectedStudent.gradient});`;
+    style = `mask-image: url(${selectedStudent.symbolBig}); background-image: linear-gradient(135deg, ${selectedStudent.gradient});`;
   }
 
   // On website mounted
@@ -73,8 +73,20 @@
       <div class="text-title" style="font-size: 35px; color: #2E302F; ">
         {selectedStudent?.id}th Logogram
       </div>
-      <div class="text-sub" style="color: #2E302F; ">
-        {describeStudent(selectedStudent)}
+
+      <div class="description-container">
+        {#each describeStudent(selectedStudent) as entity}
+          {#if entity.type === "word"}
+            <div class="text-sub" style="color: #2E302F; ">
+              {entity.value}
+            </div>
+          {:else}
+            <div
+              class="mini-gram"
+              style={`mask-image: url(/images/translator/${entity.value}.png);`}
+            ></div>
+          {/if}
+        {/each}
       </div>
     </div>
   </div>
@@ -96,33 +108,27 @@
 
   .row-container {
     display: flex;
-    position: fixed;
+    position: absolute;
     max-width: 100vw;
     max-height: 80vh;
     height: 100%;
-    width: auto;
+    width: 100vw;
     flex-direction: row;
     align-items: center;
-    margin-right: 32px;
   }
 
   .logograms-container {
-    display: flex;
-    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+    justify-items: center;
     width: 100%;
     height: 100%;
     max-width: 25%;
-    max-height: auto; /* 75% of the viewport height */
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
     overflow-y: auto;
-    justify-content: center;
     background-color: #0000008a;
     margin-left: 16px;
-    padding: 8px;
+    padding: 16px;
     border-radius: 10px;
-    /*justify-content: space-between; */
   }
 
   .current-logogram-container {
@@ -132,6 +138,7 @@
     height: 100%;
     margin-left: 32px;
     margin-right: 32px;
+    animation: smooth 5s infinite alternate ease-in-out;
   }
 
   .data-container {
@@ -140,7 +147,6 @@
     height: 100%;
     width: 100%;
     max-width: 25%;
-    max-height: auto;
     flex-direction: column;
     flex-wrap: nowrap;
     overflow-y: auto;
@@ -155,11 +161,20 @@
     mask-size: 100%;
     mask-mode: alpha;
     color: transparent;
-    background-size: 200% 200%;
-    animation: animateGradient 10s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-    background-size: 200% 200%;
-    background-position: 0% 100%;
-    animation-direction: alternate;
+    background-size: 300% 300%;
+    animation: glowing 2s ease infinite;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
   }
 
   @keyframes animateGradient {
@@ -174,17 +189,51 @@
     }
   }
 
+  @keyframes smooth {
+    0% {
+      transform: translateX(-5px) scale(1) rotate(-2deg);
+    }
+    50% {
+      transform: translateX(5px) scale(1.05) rotate(1deg);
+    }
+    100% {
+      transform: translateX(-5px) scale(1) rotate(-2deg);
+    }
+  }
+
   .text-title {
     font-family: "Gotham Light", sans-serif;
     font-size: 50px;
     color: #444444;
   }
 
+  .description-container {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 32px;
+  }
+
   .text-sub {
     font-family: "Gotham Light", sans-serif;
-    font-size: 18px;
+    font-size: 30px;
     color: #797979;
-    margin-left: 4px;
+    margin-right: 7px;
+    z-index: 1200;
+  }
+
+  .mini-gram {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    mask-size: 100%;
+    margin-bottom: -25px;
+    margin-top: -25px;
+    margin-left: -12.5px;
+    margin-right: -12.5px;
+    z-index: 1000;
   }
 
   /* width */

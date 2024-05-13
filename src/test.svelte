@@ -3,7 +3,7 @@
   import SmokeEffect from "./Component/Effects/Smoke.svelte";
 
   let style_1 = `mask-image: url(./images/logograms/8.png); background-image: linear-gradient(to bottom right, black, black);`;
-  let style_2 = `mask-image: url(./images/logograms/8.png); background-image: linear-gradient(to bottom right, red, blue);`;
+  let style_2 = `mask-image: url(./images/logograms/8.png); background-image: linear-gradient(to bottom right, red, blue); `;
 
   let isHovered = false;
 
@@ -30,7 +30,8 @@
   <div class="gradient-image-2" style={isHovered ? style_2 : style_1}></div>
 </div>
 <div class="nebxula"></div>
-
+<div class="glowing-gradient"></div>
+<div class="current-logogram-container"></div>
 <SmokeEffect />
 
 <style>
@@ -151,5 +152,46 @@
     backdrop-filter: blur(2px); /* Ajusta el nivel de desenfoque aquí */
     z-index: 998; /* Asegúrate de que esté debajo del elemento con hover */
     pointer-events: none; /* Permite hacer clic a través de la neblina */
+  }
+
+  .glowing-gradient {
+    background: linear-gradient(135deg, #ff00ff, #00ffff);
+    background-size: 400% 400%;
+    animation: glowing 8s ease infinite;
+    height: 100px;
+    width: 200px;
+  }
+
+  @keyframes glowing {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .current-logogram-container {
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    background-color: blue;
+    position: relative;
+    animation: allAnimations 5s infinite alternate ease-in-out;
+  }
+
+  @keyframes allAnimations {
+    0% {
+      transform: translateX(-5px) scale(1) rotate(-4deg);
+    }
+    50% {
+      transform: translateX(5px) scale(1.05) rotate(2deg);
+    }
+    100% {
+      transform: translateX(-5px) scale(1) rotate(-2deg);
+    }
   }
 </style>

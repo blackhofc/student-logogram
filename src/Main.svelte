@@ -12,7 +12,7 @@
   import SmokeEffect from "./Component/Effects/Smoke.svelte";
 
   // Variables
-  let isAboutVisible = false;
+  let isAboutVisible = true;
   let selectedStudent = null;
 
   // Define a function to handle the custom event
@@ -35,7 +35,7 @@
     <div class="text-title" style="font-size: 65px; margin-top: 16px;">
       Student Logogram
     </div>
-    <div style="margin-top: 15px;" class="text-sub">
+    <div style="margin-top: 15px; text-align: center;" class="text-sub">
       La representación en logograma de los intereses de un estudiante en el
       lenguaje alien
     </div>

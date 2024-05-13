@@ -22,30 +22,51 @@ const VARIABLES = {
     languages: { title: "Idiomas", description: "Ubicados a 0°, 45°, 315°", data: symbols.languages },
 };
 
-function minIcon(){
-    
-    // <img class="image-container-logogram" src={icon} alt="" />
-    return ''
+
+function isW(message) {
+    const result = []
+    message.toString().split(' ').forEach((value) =>{
+        result.push({ type: 'word', value })
+    });
+    return result;
+}
+
+function isL(value) {
+    return { type: 'logogram', value };
+}
+
+function processGrams(msg, grams) {
+    const result = [];
+    Object.entries(grams || {}).forEach(([key, value]) => {
+        if (result.length === 0) {
+            result.push(...msg);
+        }
+        result.push(...isW(key), isL(value.id));
+    });
+    return result;
 }
 
 function describeStudent(student) {
-    if(!student){
-        return;
+    if (!student) {
+        return [];
     }
 
-    const name = student.name.split(" ")[0];
-    const gender = student.gender;
-    const age = student.age;
-    const genres = student.music_genres.join(", ");
-    const sports = student.fav_sports.join(", ");
-    const languages = student.languages.join(", ");
+    const { name, age, grams, music_genres } = student;
 
-    return `${name} es ${gender}, tiene ${age} años, escucha genero ${genres}, le gusta mirar ${sports} y habla en ${languages}.`;
-  }
+    const nameToken = isW(name.split(" ")[0]);
+    const ageToken = isW(age);
+    const genderTokens = processGrams([], grams?.gender);
+    const genresTokens = music_genres ? [...isW('escucha género'), ...isW(music_genres.join(', '))] : [];
+    const sportsTokens = processGrams(isW('y le gusta mirar'), grams?.fav_sports);
+    const languagesTokens = processGrams(isW('habla en'), grams?.languages);
+
+    console.log('Description', [...nameToken, ...isW('es'), ...genderTokens, ...isW('tiene'), ...ageToken, ...isW('años'), ...languagesTokens, ...genresTokens, ...sportsTokens])
+    return [...nameToken, ...isW('es'), ...genderTokens, ...isW('tiene'), ...ageToken, ...isW('años'), ...languagesTokens, ...genresTokens, ...sportsTokens];
+}
 
 function loadStudents(selectedId){
     const parsedStudents = [];
-    students.sort((a, b) => a.name.localeCompare(b.name));
+    // students.sort((a, b) => a.name.localeCompare(b.name));
     students.forEach((person) => {
         const { id, name, age, gender, music_genres, fav_sports } = person;
 
@@ -86,6 +107,7 @@ function loadStudents(selectedId){
         });
 
     });
+    
     return parsedStudents;
 }
 
