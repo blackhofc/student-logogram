@@ -139,6 +139,7 @@
     margin-left: 32px;
     margin-right: 32px;
     animation: smooth 5s infinite alternate ease-in-out;
+    align-items: center;
   }
 
   .data-container {
@@ -154,7 +155,7 @@
 
   .gradient-image {
     width: 100%;
-    height: 100%;
+    height: 110%;
     -webkit-mask-size: cover;
     mask-position: center;
     mask-repeat: no-repeat;
@@ -163,6 +164,7 @@
     color: transparent;
     background-size: 300% 300%;
     animation: glowing 2s ease infinite;
+    margin-top: 10px;
   }
 
   @keyframes glowing {
