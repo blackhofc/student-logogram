@@ -1,3 +1,4 @@
+
 import openpyxl, json, random
 from collections import Counter
 from random import randint
@@ -23,8 +24,7 @@ def create_music(values):
     for key, count in values:
         if key == 'Variado':
             continue
-
-        if len(colors) > 0:
+        if len(colors)>0 :
             musics[key] = { 'color': colors.pop() }
         else:
             musics['Otros'] = { 'color': '00A3F5' }
@@ -142,7 +142,6 @@ def create_tops(data):
 
 if __name__ == '__main__':
     workbook = openpyxl.load_workbook('data.xlsx')
-
     sheet = workbook.active
 
     students = []

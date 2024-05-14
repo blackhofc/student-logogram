@@ -20,20 +20,22 @@
   <div class="popup-overlay" on:click={closePopup}>
     <div class="popup-content" on:click|stopPropagation>
       <div class="head-container">
-        <div class="text-title">Student Logogram</div>
-        <div style="margin-top: 15px; text-align: center;" class="text-sub">
-          Proyecto de visualización de datos inspirado en la película
-          "Arrival".Descubre cómo transformamos las respuestas de una encuesta
-          en logogramas, capturando intereses y preferencias en un lenguaje
-          visual único.
+        <div class="text-title">Acerca de Student Logogram</div>
+        <div style="text-align: center;" class="text-sub">
+          Proyecto de visualización de datos inspirado en la película "Arrival".
+        </div>
+        <div style="text-align: center;" class="text-sub">
+          Descubre cómo transformamos las respuestas de una encuesta en
+          logogramas, capturando intereses y preferencias en un lenguaje visual
+          único.
         </div>
         <a
           class="text-sub"
           style=" text-decoration: underline; text-underline-offset: 5px"
-          href="https://creativechair.org/stephen-wolfram/"
+          href="https://www.figma.com/proto/IvTPuLXJyB2YAapTCfqK4X/Student-Logogram---Presentaci%C3%B3n?page-id=0%3A1&node-id=590-634&viewport=-2363%2C-1923%2C1.21&t=8E7mRo1zN5P1vXIR-1&scaling=contain&starting-point-node-id=590%3A634"
           target="_blank"
         >
-          (Referencia de Inspiración)
+          (Ver presentación del proyecto)
         </a>
       </div>
 
@@ -131,16 +133,6 @@
     margin-bottom: 8px;
   }
 
-  .logograms-container {
-    display: flex;
-    position: relative;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px;
-  }
-
   :global(body) {
     background-color: white;
     height: 100vh;
@@ -153,13 +145,13 @@
   .text-title {
     font-family: "Gotham Light", sans-serif;
     font-size: 45px;
-    color: #444444;
+    color: #000000;
   }
 
   .text-sub {
     font-family: "Gotham Light", sans-serif;
     font-size: 16px;
-    color: #797979;
+    color: #000000;
     margin-left: 4px;
   }
 

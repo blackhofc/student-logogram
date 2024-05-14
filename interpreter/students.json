@@ -14,7 +14,6 @@
             "Fórmula 1"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -30,9 +29,8 @@
             "Fútbol"
         ],
         "languages": [
-            "Francés",
-            "Inglés",
-            "Español"
+            "Frances",
+            "Inglés"
         ]
     },
     {
@@ -47,9 +45,8 @@
             "Curling"
         ],
         "languages": [
-            "Francés",
+            "Frances",
             "Inglés",
-            "Español",
             "Portugués"
         ]
     },
@@ -65,7 +62,6 @@
             "Ninguno"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -81,9 +77,8 @@
             "Fórmula 1"
         ],
         "languages": [
-            "Español",
-            "Inglés",
-            "Francés"
+            "Ingles",
+            "Frances "
         ]
     },
     {
@@ -100,9 +95,8 @@
             "Volley"
         ],
         "languages": [
-            "Español",
             "Inglés",
-            "Francés"
+            "Frances"
         ]
     },
     {
@@ -119,7 +113,6 @@
             "Volley"
         ],
         "languages": [
-            "Español",
             "Inglés",
             "Portugués"
         ]
@@ -136,9 +129,8 @@
             "Ninguno"
         ],
         "languages": [
-            "Español",
             "Inglés",
-            "Francés"
+            "Frances"
         ]
     },
     {
@@ -154,7 +146,6 @@
             "Fútbol"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -173,7 +164,6 @@
             "Básquet"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -191,7 +181,6 @@
             "Rugby"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -209,25 +198,8 @@
             "Tenis"
         ],
         "languages": [
-            "Español",
             "Inglés",
             "Hebreo"
-        ]
-    },
-    {
-        "id": 14,
-        "name": "Guido Salem",
-        "age": 22,
-        "gender": "Hombre",
-        "music_genres": [
-            "Rock"
-        ],
-        "fav_sports": [
-            "Fútbol"
-        ],
-        "languages": [
-            "Español",
-            "Inglés"
         ]
     },
     {
@@ -242,8 +214,7 @@
             "Tenis"
         ],
         "languages": [
-            "Español",
-            "Inglés",
+            "Ingles",
             "Italiano"
         ]
     },
@@ -266,9 +237,8 @@
             "Fútbol"
         ],
         "languages": [
-            "Español",
             "Inglés",
-            "Francés",
+            "Frances",
             "Japonés"
         ]
     },
@@ -285,8 +255,7 @@
             "Fútbol Americano "
         ],
         "languages": [
-            "Español",
-            "Inglés"
+            "Inglés "
         ]
     },
     {
@@ -302,7 +271,6 @@
             "Básquet"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -320,7 +288,6 @@
         ],
         "languages": [
             "Inglés",
-            "Español",
             "Portugués"
         ]
     },
@@ -333,10 +300,9 @@
             "Rock "
         ],
         "fav_sports": [
-            "Fútbol"
+            "Futbol"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -349,10 +315,9 @@
             "Urbano Latino"
         ],
         "fav_sports": [
-            "Fútbol"
+            "Futbol"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -368,7 +333,6 @@
             "Fútbol"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -385,7 +349,6 @@
             "Hockey"
         ],
         "languages": [
-            "Español",
             "Inglés",
             "Italiano"
         ]
@@ -402,7 +365,6 @@
             "Fórmula 1"
         ],
         "languages": [
-            "Español",
             "Inglés",
             "Portugués",
             "Japonés"
@@ -421,7 +383,6 @@
             "Tenis"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -437,7 +398,6 @@
             "Hockey"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -453,7 +413,6 @@
             "Fútbol"
         ],
         "languages": [
-            "Español",
             "Inglés"
         ]
     },
@@ -469,9 +428,8 @@
             "Fútbol"
         ],
         "languages": [
-            "Español",
             "Inglés",
-            "Francés"
+            "Frances"
         ]
     },
     {
@@ -484,10 +442,9 @@
         ],
         "fav_sports": [
             "Tenis",
-            "Fútbol"
+            "fútbol"
         ],
         "languages": [
-            "Español",
             "Inglés",
             "Italiano"
         ]
@@ -505,7 +462,6 @@
             "Fútbol"
         ],
         "languages": [
-            "Español",
             "Inglés",
             "Italiano"
         ]

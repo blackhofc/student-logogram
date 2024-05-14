@@ -31,7 +31,7 @@
   .text-title {
     font-family: "Gotham Light", sans-serif;
     font-size: 24px;
-    color: #444444;
+    color: #000000;
     text-align: left;
     white-space: nowrap;
   }
@@ -39,7 +39,7 @@
   .text-sub {
     font-family: "Gotham Light", sans-serif;
     font-size: 18px;
-    color: #797979;
+    color: #555555;
     text-align: left;
     white-space: nowrap;
     margin-left: 5px;

@@ -12,7 +12,7 @@
   import SmokeEffect from "./Component/Effects/Smoke.svelte";
 
   // Variables
-  let isAboutVisible = true;
+  let isAboutVisible = false;
   let selectedStudent = null;
 
   // Define a function to handle the custom event
@@ -32,12 +32,15 @@
 
 <div style="display: flex; postion:relative; flex-direction: column;">
   <div class="head-container" style="z-index: 1000;">
-    <div class="text-title" style="font-size: 65px; margin-top: 16px;">
+    <div
+      class="text-title"
+      style="text-align: center; font-size: 65px; margin-top: 16px;"
+    >
       Student Logogram
     </div>
     <div style="margin-top: 15px; text-align: center;" class="text-sub">
-      La representación en logograma de los intereses de un estudiante en el
-      lenguaje alien
+      ¡Visualiza los intereses de 29 estudiantes representados en logogramas del
+      lenguaje hetapod!
     </div>
     <a
       class="text-sub"
@@ -88,18 +91,20 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 10px;
+    justify-items: center;
   }
 
   .text-title {
     font-family: "Gotham Light", sans-serif;
     font-size: 50px;
-    color: #444444;
+    color: #000000;
   }
 
+  /* 444444 */
   .text-sub {
     font-family: "Gotham Light", sans-serif;
-    font-size: 16px;
-    color: #797979;
+    font-size: 20px;
+    color: #000000;
     margin-left: 4px;
   }
 
