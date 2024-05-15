@@ -65,4 +65,17 @@
   .icon {
     transform: scale(0.8); /* Scale the icon to 80% of its original size */
   }
+
+  .icon:hover {
+    animation: expand 0.1s ease-in-out forwards;
+  }
+
+  @keyframes expand {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
 </style>

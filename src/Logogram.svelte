@@ -53,6 +53,7 @@
   style="display: flex; position: absolute; margin-top: 25px; margin-left: 16px"
 >
   <img
+    class="back-img"
     src={"/images/arrow_back.png"}
     style="max-width: 150px; z-index: 1000"
     alt=""
@@ -219,6 +220,10 @@
     100% {
       transform: translateX(-5px) scale(1) rotate(-2deg);
     }
+  }
+
+  .back-img:hover {
+    animation: expand 0.1s ease-in-out forwards;
   }
 
   .text-title {
