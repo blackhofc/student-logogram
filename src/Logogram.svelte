@@ -261,6 +261,10 @@
     z-index: 1000;
   }
 
+  .mini-gram:hover {
+    animation: expand 0.1s easec-in-out forwards;
+  }
+
   .about-button {
     border: none;
     background: none;
