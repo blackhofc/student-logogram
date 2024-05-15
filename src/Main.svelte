@@ -30,6 +30,15 @@
   onMount(() => {});
 </script>
 
+<button
+  class="about-button"
+  on:click={function handle() {
+    isAboutVisible = !isAboutVisible;
+  }}
+>
+  <img src="/images/about.png" alt="About" />
+</button>
+
 <div style="display: flex; postion:relative; flex-direction: column;">
   <div class="head-container" style="z-index: 1000;">
     <div
@@ -64,7 +73,6 @@
     <Footer />
   </div>
 </div>
-
 <SmokeEffect />
 
 <PopAbout
@@ -106,6 +114,35 @@
     font-size: 20px;
     color: #000000;
     margin-left: 4px;
+  }
+
+  .about-button:hover {
+    animation: expand 0.1s ease-in-out forwards;
+  }
+
+  @keyframes expand {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
+  }
+
+  .about-button {
+    border: none;
+    background: none;
+    z-index: 3000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .about-button img {
+    display: block;
+    width: 70px;
+    height: auto;
   }
 
   /* width */

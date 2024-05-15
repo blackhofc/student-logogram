@@ -8,12 +8,14 @@
   // Import componenets
   import Student from "./Component/SmallGram.svelte";
   import SmokeEffect from "./Component/Effects/Smoke.svelte";
+  import PopAbout from "./Component/Popup/About.svelte";
 
   // Retrieve the id parameter from the URL
   const params = extractParams(window);
   console.log(params.id);
 
   // Variables
+  let isAboutVisible = false;
   let selectedStudent = null;
   let style = "";
   let students = loadStudents();
@@ -57,6 +59,15 @@
   />
 </Link>
 
+<button
+  class="about-button"
+  on:click={function handle() {
+    isAboutVisible = !isAboutVisible;
+  }}
+>
+  <img src="/images/about.png" alt="About" />
+</button>
+
 <div class="page">
   <div class="row-container">
     <div class="logograms-container">
@@ -92,6 +103,13 @@
   </div>
 </div>
 <SmokeEffect />
+
+<PopAbout
+  visible={isAboutVisible}
+  onClose={function () {
+    isAboutVisible = !isAboutVisible;
+  }}
+/>
 
 <style>
   .page {
@@ -236,6 +254,35 @@
     margin-left: -12.5px;
     margin-right: -12.5px;
     z-index: 1000;
+  }
+
+  .about-button {
+    border: none;
+    background: none;
+    z-index: 3000;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+  }
+
+  .about-button img {
+    display: block;
+    width: 70px;
+    height: auto;
+  }
+
+  .about-button:hover {
+    animation: expand 0.1s ease-in-out forwards;
+  }
+
+  @keyframes expand {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.2);
+    }
   }
 
   /* width */
